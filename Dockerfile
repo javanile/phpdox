@@ -11,7 +11,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get autoremove --yes && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-RUN curl -sLo /usr/local/bin/phpdox http://phpdox.de/releases/phpdox.phar && chmod +x /usr/local/bin/phpdox
+RUN curl -sLo /usr/local/bin/phploc https://phar.phpunit.de/phploc-5.phar && chmod +x /usr/local/bin/phploc
+RUN curl -sLo /usr/local/bin/phpdox https://github.com/theseer/phpdox/releases/download/0.12.0/phpdox-0.12.0.phar && chmod +x /usr/local/bin/phpdox
 
 COPY phpdox-entrypoint.sh /usr/local/bin/phpdox-entrypoint.sh
 

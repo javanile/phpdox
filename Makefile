@@ -14,3 +14,6 @@ test-help: build
 
 test-sample: build
 	@docker run --rm -v $${PWD}:/app -u $$(id -u) javanile/phpdox -f test/phpdox.xml
+
+test-phploc: build
+	@docker run --rm -v $${PWD}:/app -u $$(id -u) javanile/phpdox phploc --log-xml=test/phploc/phploc.xml test/fixtures

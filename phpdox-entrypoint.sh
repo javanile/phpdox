@@ -16,6 +16,9 @@ if [ "${1#-}" != "$1" ]; then
 # check if the first argument passed in is composer
 elif [ "$1" = 'phpdox' ]; then
   set -- /usr/bin/tini -- "$@"
+# check if the first argument passed in is phploc
+elif [ "$1" = 'phploc' ]; then
+  set -- /usr/bin/tini -- "$@"
 # check if the first argument passed in matches a known command
 elif isCommand "$1"; then
   set -- /usr/bin/tini -- phpdox "$@"

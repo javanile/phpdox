@@ -2,8 +2,17 @@
 <phpdox xmlns="http://xml.phpdox.net/config">
     <project name="phpdox" source="${basedir}/fixtures" workdir="${basedir}/build">
         <collector backend="parser" />
+
+
+
+
         <generator output="${basedir}/docs">
             <build engine="html" output="html"/>
+            <enrich base="${basedir}/phploc">
+                <source type="phploc">
+                    <file name="phploc.xml" />
+                </source>
+            </enrich>
         </generator>
     </project>
 </phpdox>
