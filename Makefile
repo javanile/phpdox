@@ -1,13 +1,13 @@
 
 build:
 	chmod +x phpdox-entrypoint.sh
-	docker build -t javanile/phpdox .
+	docker build -t javanile/phpdox:v2 .
 
 push: build
 	git add .
 	git commit -am "publish" || true
 	git push
-	docker push javanile/phpdox
+	docker push javanile/phpdox:v2
 
 test-help: build
 	@docker run --rm -v $${PWD}:/app javanile/phpdox --help
